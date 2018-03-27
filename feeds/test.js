@@ -1,7 +1,7 @@
 // Dummy test feed; does nothing of interest
 
 // Optional - things to do BEFORE the feed runs
-exports.before = ()=>{
+exports.before = async()=>{
 }
 
 // Optional - details of the cache file to use
@@ -24,5 +24,5 @@ exports.content = ()=> {
 }
 
 // Optional - things to do AFTER the feed runs
-exports.after = ()=>{
+exports.after = async()=>{
 }
