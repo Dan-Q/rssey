@@ -1,0 +1,23 @@
+{
+  "name": "rssey",
+  "version": "1.0.0",
+  "description": "Anything-to-RSS web middleware powered by Headless Chrome",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dan-Q/rssey.git"
+  },
+  "author": "Dan Q",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Dan-Q/rssey/issues"
+  },
+  "homepage": "https://github.com/Dan-Q/rssey#readme",
+  "dependencies": {
+    "moment": "^2.21.0",
+    "puppeteer": "^1.2.0"
+  }
+}
