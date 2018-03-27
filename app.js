@@ -5,8 +5,8 @@ const Moment = require('moment');
 const Handlebars = require('handlebars');
 
 var server = HTTP.createServer(function(req, res) {
-  // Check for valid feed name in URL (can only contain letters, numbers, hyphens, underscores, and full stops/periods)
-  if(!(/^\/[\w\-\.]+$/.test(req.url))){ res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('Not found.'); return; }
+  // Check for valid feed name in URL (can only contain letters, numbers, hyphens, and underscores)
+  if(!(/^\/[\w\-]+$/.test(req.url))){ res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('Not found.'); return; }
   // Check that requested feed actually exists
   const filename = `./feeds${req.url}.js`;
   if(!FS.existsSync(filename)){ res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('Not found.'); return; }
