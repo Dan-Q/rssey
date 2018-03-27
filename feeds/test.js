@@ -19,7 +19,7 @@ exports.template = ()=> "plain.txt";
 // Content to pipe to the template
 exports.content = ()=> {
   return {
-    body: "This was the test feed."
+    body: "This is the test feed."
   }
 }
 
