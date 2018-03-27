@@ -1,10 +1,8 @@
 const HTTP = require('http');
 const FS = require('fs');
-const Puppeteer = require('puppeteer');
-const Moment = require('moment');
 const Handlebars = require('handlebars');
 
-var server = HTTP.createServer(function(req, res) {
+var server = HTTP.createServer(async(req, res)=>{
   // Check for valid feed name in URL (can only contain letters, numbers, hyphens, and underscores)
   if(!(/^\/[\w\-]+$/.test(req.url))){ res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('Not found.'); return; }
   // Check that requested feed actually exists
@@ -25,11 +23,11 @@ var server = HTTP.createServer(function(req, res) {
     }
   }
   // No cached copy: proceed to generate the feed
-  if(feed.before) feed.before();
+  if(feed.before) await feed.before();
   const template = Handlebars.compile(FS.readFileSync(`templates/${feed.template()}`).toString());
   const output = template(feed.content());
   res.end(output);
-  if(feed.after) feed.after();
+  if(feed.after) await feed.after();
   // Write to cache, if required
   if(feed.cache) FS.writeFileSync(`cache/${feed.cache.filename}`, output)
 });
