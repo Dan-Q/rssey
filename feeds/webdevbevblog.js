@@ -17,7 +17,7 @@ exports.cache = {
 // Before producing output, connect to the site and fetch the data
 var items = [];
 exports.before = async()=>{
-  const browser = await Puppeteer.launch();
+  const browser = await Puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
   const page = await browser.newPage();
   await page.goto(LIST_URL);
   items = await page.evaluate(() => {

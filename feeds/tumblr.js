@@ -20,7 +20,7 @@ exports.before = async(req)=>{
     return;
   }
   const blogUrl = `https://${blog}.tumblr.com/rss`;
-  const browser = await Puppeteer.launch();
+  const browser = await Puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
   const page = await browser.newPage();
   await page.goto(blogUrl);
   await page.click('button[data-submit="agree"]');
