@@ -9,10 +9,10 @@ const LIMIT = 60;
 const TTL = 720; // 12 hours
 
 // Optional - details of the cache file to use
-/*exports.cache = {
+exports.cache = {
   filename: 'henryblyth.rss.xml', // must be unique in this installation
   lifespan: 6 * 60 * 60 * 1000      // in milliseconds, so 6 * 60 * 60 * 1000 = 6 hours
-}*/
+}
 
 // Before producing output, connect to the site and fetch the data
 var items = [];
