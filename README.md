@@ -8,11 +8,11 @@ feed, which in turn is configured with JS code/CSS selectors to collate the requ
 Very much "dogfood-under-construction" right now: I'm using it for my own benefit but I can't make any promise
 that it's useful for anybody else, yet.
 
+Easier-to-use alternatives (with slightly fewer features, e.g. no authentication/multi-page fetches) include https://politepol.com/, http://fetchrss.com/, and https://feedity.com/.
+
 ## Authors
 
 * **[Dan Q](https://github.com/Dan-Q)**
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
