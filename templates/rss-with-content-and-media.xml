@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>{{title}}</title>
+    <description>{{description}}</description>
+    <link>{{link}}</link>
+    <lastBuildDate>{{lastBuildDate}}</lastBuildDate>
+    <pubDate>{{pubDate}}</pubDate>
+    <ttl>{{ttl}}</ttl>
+
+    {{#items}}
+      <item>
+        <title>{{title}}</title>
+        <description>{{description}}</description>
+        <content:encoded><![CDATA[{{{content_encoded}}}]]></content:encoded>
+        <media:content url="{{media_url}}" medium="{{media_medium}}" />
+        <link>{{link}}</link>
+        <guid isPermaLink="false">{{guid}}</guid>
+        <pubDate>{{pubDate}}</pubDate>
+      </item>
+    {{/items}}
+  </channel>
+</rss>
+
