@@ -1,4 +1,4 @@
-// Sample RSS feed of webdevbev.co.uk's blog
+// Sample RSS feed of The Far Side's "Daily Dose"
 
 // Requirements: Puppeteer, Moment.js
 const Puppeteer = require('puppeteer');
