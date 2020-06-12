@@ -26,7 +26,7 @@ exports.before = async()=>{
   let date = await page.evaluate(() => {
     return document.querySelectorAll('.tfs-content h3')[0].innerText;
   });
-  let pubDate = Moment.utc(date).format(DATE_RFC2822);
+  let pubDate = Moment.utc(date.split(', ')[1], 'MMMM D, YYYY').format(DATE_RFC2822);
   items = await page.evaluate(({ pubDate, TITLE_TRIM_LENGTH }) => {
     return([...document.querySelectorAll('.js-daily-dose .tfs-comic')].map(function(a){
       const link = a.querySelectorAll('.js-clipboard')[0].dataset.clipboardText;
@@ -43,7 +43,7 @@ exports.before = async()=>{
         title: title,
         link: link,
         guid: link,
-        description: comicBody.innerText,
+        description: (comicBody ? comicBody.innerText : ''),
         pubDate: pubDate,
         content_encoded: content
       };
